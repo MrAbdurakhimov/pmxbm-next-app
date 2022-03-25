@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import { Menu } from 'react-feather';
 import styled from 'styled-components';
 import theme from '../config/theme';
+import RoundedButton from './elements/RoundedButton';
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -12,8 +14,10 @@ const Container = styled.div`
 `;
 const Logo = styled.div`
   flex: 3;
+  font-size: 30px;
+  font-weight: bold;
 `;
-const Menu = styled.div`
+const MainMenu = styled.div`
   flex: 4;
   display: flex;
   align-items: center;
@@ -25,7 +29,7 @@ const Header = () => {
   return (
     <Container>
       <Logo>Logo</Logo>
-      <Menu>
+      <MainMenu>
         <Item>
           <Link href={'/'}>
             <a>Additional Service</a>
@@ -51,7 +55,16 @@ const Header = () => {
             <a>Contact us</a>
           </Link>
         </Item>
-      </Menu>
+        <Item>
+          <Link href={'/'}>
+            <a>
+              <RoundedButton background={theme.colors.white}>
+                <Menu color={theme.colors.white} />
+              </RoundedButton>
+            </a>
+          </Link>
+        </Item>
+      </MainMenu>
     </Container>
   );
 };
