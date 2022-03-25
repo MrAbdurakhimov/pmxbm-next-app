@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../config/theme';
 import GlobalStyle from '../config/globalStyle';
 import NextNProgress from 'nextjs-progressbar';
+import Header from '../components/Header';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
