@@ -7,7 +7,10 @@ import Header from './Header';
 const Container = styled.div`
   display: block;
 `;
-const LowerSide = styled.div``;
+const LowerSide = styled.div`
+  background-color: ${theme.colors.white};
+  min-height: 42vh;
+`;
 
 const Footer = () => {
   return (
