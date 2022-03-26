@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 import { RoundedButton } from './elements/';
-import { Menu } from 'react-feather';
+import { Menu, X } from 'react-feather';
 import { tablet, mobile } from './utils/responsive';
 const Container = styled.div`
   display: flex;
@@ -99,7 +99,11 @@ const Header = () => {
           }}
         >
           <RoundedButton background={theme.colors.white}>
-            <Menu color={theme.colors.white} />
+            {isOpen ? (
+              <X color={theme.colors.white} />
+            ) : (
+              <Menu color={theme.colors.white} />
+            )}
           </RoundedButton>
         </ToggleButton>
       </Container>
