@@ -17,8 +17,8 @@ const Container = styled.div`
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin: 16px;
-  width: 29%;
+  margin: 32px;
+  width: 25%;
   ${tablet({
     width: '100%',
   })}

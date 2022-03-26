@@ -3,6 +3,7 @@ import theme from '../config/theme';
 import GlobalStyle from '../config/globalStyle';
 import NextNProgress from 'nextjs-progressbar';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );

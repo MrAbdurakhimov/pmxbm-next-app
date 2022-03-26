@@ -59,7 +59,7 @@ const MobileMenu = styled.div`
 
 const Item = styled.div``;
 
-const Header = () => {
+const Header = ({ icon }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -101,6 +101,8 @@ const Header = () => {
           <RoundedButton background={theme.colors.white}>
             {isOpen ? (
               <X color={theme.colors.white} />
+            ) : icon ? (
+              icon
             ) : (
               <Menu color={theme.colors.white} />
             )}

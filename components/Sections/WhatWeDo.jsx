@@ -5,13 +5,11 @@ import theme from '../../config/theme';
 import { Card } from '../elements/';
 
 const Container = styled.div`
-  display: flex;
+  display: block;
   text-align: center;
-  flex-direction: column;
   padding: 64px 10%;
   background-color: ${theme.colors.white};
   color: ${theme.colors.text};
-  height: 74vh;
 `;
 
 const Cards = styled.div`
