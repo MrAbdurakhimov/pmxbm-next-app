@@ -12,6 +12,8 @@ const Container = styled.div`
   background-color: ${theme.colors.primary};
   color: ${theme.colors.white};
   padding: 42px 10%;
+  position: relative;
+  width: 100%;
 `;
 const Logo = styled.div`
   flex: 3;
@@ -36,9 +38,11 @@ const ToggleButton = styled.div`
 `;
 
 const MobileMenu = styled.div`
-  transition: all 0.3s ease-in-out;
-  background-color: ${theme.colors.primary + '96'};
-  color: ${theme.colors.white};
+  position: absolute;
+  width: 100%;
+  transition: all 1s;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.text};
   padding: 8% 42px;
   display: none;
   flex-direction: column;
@@ -47,9 +51,10 @@ const MobileMenu = styled.div`
   height: 64vh;
   font-size: 20px;
   font-weight: bold;
-  ${tablet({
-    display: 'flex',
-  })}
+  @media (max-width: ${1000}px) {
+    transition: all 1s ease-in-out;
+    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+  }
 `;
 
 const Item = styled.div``;
@@ -98,35 +103,33 @@ const Header = () => {
           </RoundedButton>
         </ToggleButton>
       </Container>
-      {isOpen && (
-        <MobileMenu>
-          <Item>
-            <Link href={'/'}>
-              <a>Additional Service</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href={'/'}>
-              <a>Teacher Recource</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href={'/'}>
-              <a>Events</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href={'/'}>
-              <a>Awards Nomination</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href={'/'}>
-              <a>Contact us</a>
-            </Link>
-          </Item>
-        </MobileMenu>
-      )}
+      <MobileMenu isOpen={isOpen}>
+        <Item>
+          <Link href={'/'}>
+            <a>Additional Service</a>
+          </Link>
+        </Item>
+        <Item>
+          <Link href={'/'}>
+            <a>Teacher Recource</a>
+          </Link>
+        </Item>
+        <Item>
+          <Link href={'/'}>
+            <a>Events</a>
+          </Link>
+        </Item>
+        <Item>
+          <Link href={'/'}>
+            <a>Awards Nomination</a>
+          </Link>
+        </Item>
+        <Item>
+          <Link href={'/'}>
+            <a>Contact us</a>
+          </Link>
+        </Item>
+      </MobileMenu>
     </>
   );
 };
