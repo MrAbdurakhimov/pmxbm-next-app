@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Welcome from '../components/Sections/Welcome';
+import { Welcome, WhatWeDo } from '../components/Sections/';
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Welcome />
+      <WhatWeDo />
     </div>
   );
 }

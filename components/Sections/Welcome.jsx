@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: ${theme.colors.primary + '96'};
+  background-color: ${theme.colors.text};
   height: 74vh;
   color: ${theme.colors.white};
   text-align: center;

@@ -1,28 +1,62 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../../config/theme';
-import { Button } from '../elements';
+
+import { Card } from '../elements/';
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: ${theme.colors.primary + '96'};
-  height: 74vh;
-  color: ${theme.colors.white};
   text-align: center;
   flex-direction: column;
+  padding: 64px 10%;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.text};
+  height: 74vh;
+`;
+
+const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 24px 0;
 `;
 
 const Welcome = () => {
   return (
     <Container>
-      <h1>
-        WELCOME TO THE CENTER FOR <br />
-        PEDAGOGICAL EXCELLENCE AND <br />
-        INTERNATIONAL ASSESSMENT
-      </h1>
-      <Button background={theme.colors.secondary}>PDQ Login</Button>
+      <h1 style={{ textTransform: 'uppercase' }}>What We Do</h1>
+      <Cards>
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+        <Card
+          title="Mission Statement"
+          description={'Clicks to formal description of CPE'}
+          buttonText="Our mission"
+        />
+      </Cards>
     </Container>
   );
 };
