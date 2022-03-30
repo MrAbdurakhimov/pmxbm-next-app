@@ -5,6 +5,7 @@ import theme from '../config/theme';
 import { RoundedButton } from './elements/';
 import { Menu, X } from 'react-feather';
 import { tablet, mobile } from './utils/responsive';
+import Image from 'next/image';
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -64,7 +65,9 @@ const Header = ({ icon }) => {
   return (
     <>
       <Container>
-        <Logo>Logo</Logo>
+        <Logo>
+          <Image src={'/logo.svg'} width="156" height="48" alt={'Logo'} />
+        </Logo>
         <MainMenu>
           <Item>
             <Link href={'/'}>
