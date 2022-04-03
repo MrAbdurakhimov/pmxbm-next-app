@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown } from 'react-feather';
+import { ChevronDown, Camera } from 'react-feather';
 import styled from 'styled-components';
 import theme from '../config/theme';
 import Header from './Header';
@@ -20,11 +20,21 @@ const LowerSide = styled.div`
     display: 'none',
   })};
 `;
+const Bottom = styled.div`
+  background-color: ${theme.colors.white};
+  padding: 64px;
+  display: flex;
+  justify-content: space-between;
+  ${tablet({
+    display: 'none',
+  })};
+`;
 const Section = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex-shrink: none;
+  padding: 0 24px;
   & a {
     margin: 4px 0;
   }
@@ -152,6 +162,24 @@ const Footer = () => {
           </div>
         </Section>
       </LowerSide>
+      <Bottom>
+        <Section>© Все права защищены 2019 - 2022</Section>
+        <Section style={{ width: '820px' }}>
+          <div>
+            <Image
+              src={'/logo/uzinfocom.png'}
+              width={112}
+              height={12}
+              alt={'social'}
+            />
+          </div>
+        </Section>
+        <Section style={{ flexDirection: 'row', width: '420px' }}>
+          <div>Site visitors:</div>
+          <div>Total for today:</div>
+          <div>Real time:</div>
+        </Section>
+      </Bottom>
     </Container>
   );
 };
