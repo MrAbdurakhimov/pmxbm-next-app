@@ -3,6 +3,9 @@ import { ChevronDown } from 'react-feather';
 import styled from 'styled-components';
 import theme from '../config/theme';
 import Header from './Header';
+import Link from 'next/link';
+import Image from 'next/image';
+import { tablet } from './utils/responsive';
 
 const Container = styled.div`
   display: block;
@@ -10,13 +13,145 @@ const Container = styled.div`
 const LowerSide = styled.div`
   background-color: ${theme.colors.white};
   min-height: 42vh;
+  padding: 64px;
+  display: flex;
+  justify-content: space-between;
+  ${tablet({
+    display: 'none',
+  })};
+`;
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-shrink: none;
+  & a {
+    margin: 4px 0;
+  }
+`;
+const Social = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
 `;
 
 const Footer = () => {
   return (
     <Container>
       <Header icon={<ChevronDown color={theme.colors.white} />} />
-      <LowerSide></LowerSide>
+      <LowerSide>
+        <Section>
+          <h3>About Us</h3>
+          <Link href="/">
+            <a>Address</a>
+          </Link>
+          <Link href="/">
+            <a>FAQ</a>
+          </Link>
+
+          <h3>Contact Us</h3>
+          <Link href="/">
+            <a>Website</a>
+          </Link>
+          <Link href="/">
+            <a>Phone</a>
+          </Link>
+          <br />
+          <Social>
+            <div>
+              <Image
+                src={'/social/instagram.png'}
+                width={24}
+                height={24}
+                alt={'social'}
+              />
+            </div>
+            <div>
+              <Image
+                src={'/social/facebook.png'}
+                width={24}
+                height={24}
+                alt={'social'}
+              />
+            </div>
+            <div>
+              <Image
+                src={'/social/tg.png'}
+                width={24}
+                height={24}
+                alt={'social'}
+              />
+            </div>
+            <div>
+              <Image
+                src={'/social/youtube.png'}
+                width={24}
+                height={24}
+                alt={'social'}
+              />
+            </div>
+          </Social>
+        </Section>
+        <Section>
+          <h2>Our Partners</h2>
+          <div>
+            <Image
+              src={'/logo/cam-logo.png'}
+              width={240}
+              height={33}
+              alt={'social'}
+            />
+          </div>
+
+          <div>
+            <Image
+              src={'/logo/worldlearn.png'}
+              width={261}
+              height={71}
+              alt={'social'}
+            />
+          </div>
+        </Section>
+        <Section>
+          <div>
+            <Image
+              src={'/logo/ntu.png'}
+              width={94}
+              height={106}
+              alt={'social'}
+            />
+          </div>
+          <div>
+            <Image
+              src={'/logo/unesco.png'}
+              width={240}
+              height={65}
+              alt={'social'}
+            />
+          </div>
+        </Section>
+        <Section>
+          <div>
+            <Image
+              src={'/logo/portsmouth.png'}
+              width={226}
+              height={105}
+              alt={'social'}
+            />
+          </div>
+        </Section>
+        <Section>
+          <div>
+            <Image
+              src={'/logo/educluster.png'}
+              width={240}
+              height={105}
+              alt={'social'}
+            />
+          </div>
+        </Section>
+      </LowerSide>
     </Container>
   );
 };

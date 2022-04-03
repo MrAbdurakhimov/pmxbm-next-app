@@ -10,6 +10,8 @@ const Container = styled.div`
   justify-content: space-around;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('/section/home-bg.png');
+  background-size: cover;
+  background-position: center;
   height: 74vh;
   color: ${theme.colors.white};
   text-align: center;
