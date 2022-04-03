@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../../config/theme';
-
+import Image from 'next/image';
 import { Card } from '../elements/';
 
 const Container = styled.div`
   display: block;
   text-align: center;
   padding: 64px 10%;
-  background-color: ${theme.colors.white};
+  background: url('section/section-bg-2.png');
+  background-size: cover;
   color: ${theme.colors.text};
 `;
 
