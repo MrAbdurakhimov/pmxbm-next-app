@@ -9,7 +9,17 @@ import Image from 'next/image';
 const Container = styled.div`
   transition: 0.2s all ease-in-out;
   padding: 82px 24px 24px 24px;
-  background-color: ${theme.colors.primary};
+  background: linear-gradient(
+      0deg,
+      rgba(0, 59, 131, 0.8),
+      rgba(0, 59, 131, 0.8)
+    ),
+    ${(props) =>
+      props.background
+        ? `url('/card/${props.background}')`
+        : `url('/card/${'1.png'}')`};
+  background-size: cover;
+  background-position: center;
   color: ${theme.colors.white};
   flex-grow: 1;
   display: flex;
@@ -19,17 +29,16 @@ const Container = styled.div`
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin: 32px;
+  margin: 32px 32px 64px 32px;
   width: 25%;
   ${tablet({
     width: '100%',
   })}
   &:hover {
-    transition: 0.2s all ease-in-out;
+    transition: 0.5s all ease-in-out;
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
-    background-color: ${theme.colors.white};
+    background: ${theme.colors.white};
     color: ${theme.colors.primary};
-
     cursor: pointer;
   }
   position: relative;
@@ -60,11 +69,18 @@ const Circle = styled.div`
   align-items: center;
 `;
 
-const Card = ({ title, description, buttonUrl, buttonText }) => {
+const Card = ({
+  title,
+  description,
+  buttonUrl,
+  buttonText,
+  icon = 'mission.png',
+  background = '1.png',
+}) => {
   return (
-    <Container>
+    <Container background={background}>
       <Circle>
-        <Image alt={'Card'} src={'/icons/hr.png'} width={54} height={54} />
+        <Image alt={'Card'} src={'/icons/' + icon} width={54} height={54} />
       </Circle>
       <Heading>{title}</Heading>
       <Description>{description}</Description>
