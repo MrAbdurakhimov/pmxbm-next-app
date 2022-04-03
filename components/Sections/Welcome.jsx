@@ -2,16 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../../config/theme';
 import { Button } from '../elements';
+import { tablet } from './../utils/responsive';
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: ${theme.colors.text};
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/section/home-bg.png');
   height: 74vh;
   color: ${theme.colors.white};
   text-align: center;
   flex-direction: column;
+  h1 {
+    ${tablet({
+      fontSize: '1.5rem',
+    })}
+  }
 `;
 
 const Welcome = () => {
