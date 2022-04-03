@@ -19,7 +19,7 @@ const Cards = styled.div`
   padding: 24px 0;
 `;
 
-const Welcome = () => {
+const WhatWeDo = () => {
   return (
     <Container>
       <h1 style={{ textTransform: 'uppercase' }}>What We Do</h1>
@@ -73,4 +73,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default WhatWeDo;
