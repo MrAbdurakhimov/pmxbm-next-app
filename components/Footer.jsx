@@ -25,9 +25,12 @@ const Bottom = styled.div`
   padding: 64px;
   display: flex;
   justify-content: space-between;
-  ${tablet({
-    display: 'none',
-  })};
+  & div:nth-child(2),
+  & div:nth-child(3) {
+    ${tablet({
+      display: 'none',
+    })};
+  }
 `;
 const Section = styled.div`
   display: flex;
